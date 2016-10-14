@@ -21,8 +21,13 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 	Route::get('/home', 'HomeController@index');
 
 	Route::get('bancos/data', 'BancosController@anyData')->name('bancos.data');
-    Route::get('bancos/index', 'BancosController@index');
+        Route::get('bancos/index', 'BancosController@index');
 	Route::resource('bancos', 'BancosController');
+
+
+	Route::get('alumnos/data', 'AlumnosController@anyData')->name('alumnos.data');
+        Route::get('alumnos/index', 'AlumnosController@index');
+	Route::resource('alumnos', 'AlumnosController');
 
 
 
