@@ -4,9 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9f643c00563125b13c9cd2897fb2d4d",
-    "content-hash": "17c6ea71349c41b5087c14573edeffa9",
+    "hash": "779991e425e75073f3f8d598fe3cb392",
+    "content-hash": "a777720bcb4479c16c339422fc33eb23",
     "packages": [
+        {
+            "name": "appzcoder/crud-generator",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appzcoder/crud-generator.git",
+                "reference": "9dbb84c96a9642b17532c5fd263bdee2433c0adf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/9dbb84c96a9642b17532c5fd263bdee2433c0adf",
+                "reference": "9dbb84c96a9642b17532c5fd263bdee2433c0adf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appzcoder\\CrudGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sohel Amin",
+                    "email": "sohelamincse@gmail.com",
+                    "homepage": "http://www.appzcoder.com"
+                }
+            ],
+            "description": "Laravel 5 CRUD Generator",
+            "keywords": [
+                "crud",
+                "crud generator",
+                "laravel",
+                "laravel crud generator"
+            ],
+            "time": "2016-09-27 15:20:36"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",

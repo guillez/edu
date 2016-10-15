@@ -160,6 +160,10 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
 
+	Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
+	Collective\Html\HtmlServiceProvider::class,
+
+
     ],
 
     /*
@@ -210,6 +214,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,     
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,  
         'Datatables' => Yajra\Datatables\Datatables::class, 
+
 
     ],
 
