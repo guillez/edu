@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url ('') }}">Creditos | Si.Cre.</a>
+                <a class="navbar-brand" href="{{ url ('') }}">S.I.G.A.</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -41,17 +41,15 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('') }}"><i class="fa fa-file-text-o fa-fw"></i> Cartelera</a>
+                            <a href="{{ url ('') }}"><i class="fa fa-file-text-o fa-fw"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Orientaciones<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Gestión<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{ route('bancos.index')}}">Tipos de Créditos</a>
+                                    <a href="{{ route('ciclos.index')}}">Ciclos Lectivos</a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('bancos.create')}}">Tipos de Empresas</a>
-                                </li>
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

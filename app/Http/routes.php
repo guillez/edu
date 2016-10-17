@@ -42,7 +42,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('entidades', 'EntidadesController');
     Route::resource('posts', 'PostsController');
     Route::resource('ciclos', 'CiclosController');
-    //Route::get('ciclos/create', 'CiclosController@create');
 
 
 });
