@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-class PaisesTableSeeder extends Seeder
+class AlumnosTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -10,10 +10,10 @@ class PaisesTableSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        DB::table('Paises')->delete();
+        DB::table('Alumnos')->delete();
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
         
-        DB::table('Paises')->insert(array (
+        /*DB::table('Alumnos')->insert(array (
             0 =>
             array (
                 'id' => 1,
@@ -26,6 +26,6 @@ class PaisesTableSeeder extends Seeder
                 'nombre' => 'Uruguay',
                 'abreviacion' => 'URU',
             ),
-        ));
+        ));*/
     }
 }

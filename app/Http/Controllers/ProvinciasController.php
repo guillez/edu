@@ -5,22 +5,43 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Alumnos;
+use App\Provincias;
 use Illuminate\Http\Request;
 use Session;
+use App\Ciudades;
+use App\Paises;
 
-class AlumnosController extends Controller
+class ProvinciasController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
      */
+
+    public function getCiudades(Request $request, $id){
+        if($request->ajax()){
+            $ciudades = ciudades::ciudades($id);
+            
+            return response()->json($ciudades);
+        }
+    }
+
+
+    public function Pais()
+    {
+         return '*';
+        //return $this->hasOne('App\Paises', 'fk_pais_id');
+        //return $this->hasOne('App\Paises', 'id', 'fk_pais_id');
+    }
+
+    
+
     public function index()
     {
-        $alumnos = Alumnos::paginate(25);
+        $provincias = Provincias::paginate(25);
 
-        return view('alumnos.index', compact('alumnos'));
+        return view('provincias.index', compact('provincias'));
     }
 
     /**
@@ -30,7 +51,7 @@ class AlumnosController extends Controller
      */
     public function create()
     {
-        return view('alumnos.create');
+        return view('provincias.create');
     }
 
     /**
@@ -45,11 +66,11 @@ class AlumnosController extends Controller
         
         $requestData = $request->all();
         
-        Alumnos::create($requestData);
+        Provincias::create($requestData);
 
-        Session::flash('flash_message', 'Alumnos added!');
+        Session::flash('flash_message', 'Provincias added!');
 
-        return redirect('alumnos');
+        return redirect('provincias');
     }
 
     /**
@@ -61,9 +82,9 @@ class AlumnosController extends Controller
      */
     public function show($id)
     {
-        $alumno = Alumnos::findOrFail($id);
+        $provincia = Provincias::findOrFail($id);
 
-        return view('alumnos.show', compact('alumno'));
+        return view('provincias.show', compact('provincia'));
     }
 
     /**
@@ -75,9 +96,9 @@ class AlumnosController extends Controller
      */
     public function edit($id)
     {
-        $alumno = Alumnos::findOrFail($id);
+        $provincia = Provincias::findOrFail($id);
 
-        return view('alumnos.edit', compact('alumno'));
+        return view('provincias.edit', compact('provincia'));
     }
 
     /**
@@ -93,12 +114,12 @@ class AlumnosController extends Controller
         
         $requestData = $request->all();
         
-        $alumno = Alumnos::findOrFail($id);
-        $alumno->update($requestData);
+        $provincia = Provincias::findOrFail($id);
+        $provincia->update($requestData);
 
-        Session::flash('flash_message', 'Alumnos updated!');
+        Session::flash('flash_message', 'Provincias updated!');
 
-        return redirect('alumnos');
+        return redirect('provincias');
     }
 
     /**
@@ -110,10 +131,10 @@ class AlumnosController extends Controller
      */
     public function destroy($id)
     {
-        Alumnos::destroy($id);
+        Provincias::destroy($id);
 
-        Session::flash('flash_message', 'Alumnos deleted!');
+        Session::flash('flash_message', 'Provincias deleted!');
 
-        return redirect('alumnos');
+        return redirect('provincias');
     }
 }

@@ -5,22 +5,33 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Alumnos;
+use App\Paises;
 use Illuminate\Http\Request;
 use Session;
+use Contable\provincias;
 
-class AlumnosController extends Controller
+class PaisesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
      */
+
+
+    public function getProvincias(Request $request, $id){
+        if($request->ajax()){
+            $provincias = provincias::provincias($id);
+            return response()->json($provincias);
+        }
+    }
+
+
     public function index()
     {
-        $alumnos = Alumnos::paginate(25);
+        $paises = Paises::paginate(25);
 
-        return view('alumnos.index', compact('alumnos'));
+        return view('paises.index', compact('paises'));
     }
 
     /**
@@ -30,7 +41,7 @@ class AlumnosController extends Controller
      */
     public function create()
     {
-        return view('alumnos.create');
+        return view('paises.create');
     }
 
     /**
@@ -45,11 +56,11 @@ class AlumnosController extends Controller
         
         $requestData = $request->all();
         
-        Alumnos::create($requestData);
+        Paises::create($requestData);
 
-        Session::flash('flash_message', 'Alumnos added!');
+        Session::flash('flash_message', 'Paises added!');
 
-        return redirect('alumnos');
+        return redirect('paises');
     }
 
     /**
@@ -61,9 +72,9 @@ class AlumnosController extends Controller
      */
     public function show($id)
     {
-        $alumno = Alumnos::findOrFail($id);
+        $paise = Paises::findOrFail($id);
 
-        return view('alumnos.show', compact('alumno'));
+        return view('paises.show', compact('paise'));
     }
 
     /**
@@ -75,9 +86,9 @@ class AlumnosController extends Controller
      */
     public function edit($id)
     {
-        $alumno = Alumnos::findOrFail($id);
+        $paise = Paises::findOrFail($id);
 
-        return view('alumnos.edit', compact('alumno'));
+        return view('paises.edit', compact('paise'));
     }
 
     /**
@@ -93,12 +104,12 @@ class AlumnosController extends Controller
         
         $requestData = $request->all();
         
-        $alumno = Alumnos::findOrFail($id);
-        $alumno->update($requestData);
+        $paise = Paises::findOrFail($id);
+        $paise->update($requestData);
 
-        Session::flash('flash_message', 'Alumnos updated!');
+        Session::flash('flash_message', 'Paises updated!');
 
-        return redirect('alumnos');
+        return redirect('paises');
     }
 
     /**
@@ -110,10 +121,10 @@ class AlumnosController extends Controller
      */
     public function destroy($id)
     {
-        Alumnos::destroy($id);
+        Paises::destroy($id);
 
-        Session::flash('flash_message', 'Alumnos deleted!');
+        Session::flash('flash_message', 'Paises deleted!');
 
-        return redirect('alumnos');
+        return redirect('paises');
     }
 }

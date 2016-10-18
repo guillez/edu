@@ -42,6 +42,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('entidades', 'EntidadesController');
     Route::resource('posts', 'PostsController');
     Route::resource('ciclos', 'CiclosController');
+    Route::resource('paises', 'PaisesController');
+    Route::resource('provincias', 'ProvinciasController');
+
+    Route::resource('alumnos', 'AlumnosController');
 
 
 });

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit alumno {{ $alumno->id }}</div>
+                    <div class="panel-heading">Edit provincia {{ $provincia->id }}</div>
                     <div class="panel-body">
 
                         @if ($errors->any())
@@ -15,9 +15,9 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($alumno, [
+                        {!! Form::model($provincia, [
                             'method' => 'PATCH',
-                            'url' => ['/alumnos', $alumno->id],
+                            'url' => ['/provincias', $provincia->id],
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}
@@ -29,25 +29,14 @@
                     {!! $errors->first('nombre', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
-            <div class="form-group {{ $errors->has('documento') ? 'has-error' : ''}}">
-                {!! Form::label('documento', 'Documento', ['class' => 'col-md-4 control-label']) !!}
+            <div class="form-group {{ $errors->has('fk_pais_id') ? 'has-error' : ''}}">
+                
                 <div class="col-md-6">
-                    {!! Form::number('documento', null, ['class' => 'form-control']) !!}
-                    {!! $errors->first('documento', '<p class="help-block">:message</p>') !!}
-                </div>
-            </div>
-            <div class="form-group {{ $errors->has('serial') ? 'has-error' : ''}}">
-                {!! Form::label('serial', 'Serial', ['class' => 'col-md-4 control-label']) !!}
-                <div class="col-md-6">
-                    {!! Form::text('serial', null, ['class' => 'form-control']) !!}
-                    {!! $errors->first('serial', '<p class="help-block">:message</p>') !!}
-                </div>
-            </div>
-            <div class="form-group {{ $errors->has('observaciones') ? 'has-error' : ''}}">
-                {!! Form::label('observaciones', 'Observaciones', ['class' => 'col-md-4 control-label']) !!}
-                <div class="col-md-6">
-                    {!! Form::text('observaciones', null, ['class' => 'form-control']) !!}
-                    {!! $errors->first('observaciones', '<p class="help-block">:message</p>') !!}
+
+        {!! Form::label('fk_pais_id', 'Pais:', ['class' => 'control-label']) !!} 
+        {!! Form::select('fk_pais_id',['0'=>'Selecciona'],null,['id'=>'nombre', 'class' => 'form-control']) !!}
+
+
                 </div>
             </div>
 

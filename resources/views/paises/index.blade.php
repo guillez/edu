@@ -4,36 +4,36 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Alumnos</div>
+                    <div class="panel-heading">Paises</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/alumnos/create') }}" class="btn btn-primary btn-xs" title="Add New alumno"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
+                        <a href="{{ url('/paises/create') }}" class="btn btn-primary btn-xs" title="Add New paise"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
                         <br/>
                         <br/>
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th> Nombre </th><th> Documento </th><th> Serial </th><th>Actions</th>
+                                        <th>ID</th><th> Nombre </th><th> Abreviacion </th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($alumnos as $item)
+                                @foreach($paises as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->nombre }}</td><td>{{ $item->documento }}</td><td>{{ $item->serial }}</td>
+                                        <td>{{ $item->nombre }}</td><td>{{ $item->abreviacion }}</td>
                                         <td>
-                                            <a href="{{ url('/alumnos/' . $item->id) }}" class="btn btn-success btn-xs" title="View alumno"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
-                                            <a href="{{ url('/alumnos/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit alumno"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                                            <a href="{{ url('/paises/' . $item->id) }}" class="btn btn-success btn-xs" title="View paise"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
+                                            <a href="{{ url('/paises/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit paise"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/alumnos', $item->id],
+                                                'url' => ['/paises', $item->id],
                                                 'style' => 'display:inline'
                                             ]) !!}
-                                                {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete alumno" />', array(
+                                                {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete paise" />', array(
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-xs',
-                                                        'title' => 'Delete alumno',
+                                                        'title' => 'Delete paise',
                                                         'onclick'=>'return confirm("Confirm delete?")'
                                                 )) !!}
                                             {!! Form::close() !!}
@@ -42,7 +42,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $alumnos->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $paises->render() !!} </div>
                         </div>
 
                     </div>
