@@ -46,6 +46,16 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('provincias', 'ProvinciasController');
 
     Route::resource('alumnos', 'AlumnosController');
+    Route::resource('estados', 'EstadosController');
 
 
 });
+
+Route::resource('estados', 'estadosController');
+Route::resource('estados', 'estadosController');
+Route::resource('personas', 'PersonasController');
+Route::resource('personas', 'PersonasController');
+Route::resource('personas', 'PersonasController');
+Route::resource('personas', 'PersonasController');
+Route::resource('areas', 'AreasController');
+Route::resource('sectores', 'SectoresController');

@@ -1,4 +1,5 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -14,14 +15,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th> Nombre </th><th> Documento </th><th> Serial </th><th>Actions</th>
+                                        <th>ID</th><th> Descripcion </th><th> Activo </th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($alumnos as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->nombre }}</td><td>{{ $item->documento }}</td><td>{{ $item->serial }}</td>
+                                        <td>{{ $item->descripcion }}</td><td>{{ $item->activo }}</td>
                                         <td>
                                             <a href="{{ url('/alumnos/' . $item->id) }}" class="btn btn-success btn-xs" title="View alumno"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                                             <a href="{{ url('/alumnos/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit alumno"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>

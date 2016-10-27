@@ -1,4 +1,5 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -29,7 +30,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $alumno->id }}</td>
                                     </tr>
-                                    <tr><th> Nombre </th><td> {{ $alumno->nombre }} </td></tr><tr><th> Documento </th><td> {{ $alumno->documento }} </td></tr><tr><th> Serial </th><td> {{ $alumno->serial }} </td></tr>
+                                    <tr><th> Descripcion </th><td> {{ $alumno->descripcion }} </td></tr><tr><th> Activo </th><td> {{ $alumno->activo }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

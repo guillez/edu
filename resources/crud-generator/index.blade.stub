@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="container">
@@ -15,7 +15,7 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>%%formHeadingHtml%%<th>Actions</th>
+                                        <th>ID</th>%%formHeadingHtml%%<th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -25,7 +25,7 @@
                                         %%formBodyHtml%%
                                         <td>
                                             <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}" class="btn btn-success btn-xs" title="View %%modelName%%"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
-                                            <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" class="btn btn-primary btn-xs" title="Edit %%modelName%%"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                                            <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" class="btn btn-primary btn-xs" title="Editar %%modelName%%"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
                                                 'url' => ['/%%routeGroup%%%%viewName%%', $item->%%primaryKey%%],

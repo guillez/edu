@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Ciclos;
+use App\Persona;
 use Illuminate\Http\Request;
 use Session;
 
-class CiclosController extends Controller
+class PersonasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class CiclosController extends Controller
      */
     public function index()
     {
-        $ciclos = Ciclos::paginate(25);
+        $personas = Persona::paginate(25);
 
-        return view('ciclos.index', compact('ciclos'));
+        return view('personas.index', compact('personas'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CiclosController extends Controller
      */
     public function create()
     {
-        return view('ciclos.create');
+        return view('personas.create');
     }
 
     /**
@@ -45,11 +45,11 @@ class CiclosController extends Controller
         
         $requestData = $request->all();
         
-        Ciclos::create($requestData);
+        Persona::create($requestData);
 
-        Session::flash('flash_message', 'Ciclos added!');
+        Session::flash('flash_message', 'Persona added!');
 
-        return redirect('admin/ciclos');
+        return redirect('personas');
     }
 
     /**
@@ -61,9 +61,9 @@ class CiclosController extends Controller
      */
     public function show($id)
     {
-        $ciclo = Ciclos::findOrFail($id);
+        $persona = Persona::findOrFail($id);
 
-        return view('ciclos.show', compact('ciclo'));
+        return view('personas.show', compact('persona'));
     }
 
     /**
@@ -75,9 +75,9 @@ class CiclosController extends Controller
      */
     public function edit($id)
     {
-        $ciclo = Ciclos::findOrFail($id);
+        $persona = Persona::findOrFail($id);
 
-        return view('ciclos.edit', compact('ciclo'));
+        return view('personas.edit', compact('persona'));
     }
 
     /**
@@ -93,12 +93,12 @@ class CiclosController extends Controller
         
         $requestData = $request->all();
         
-        $ciclo = Ciclos::findOrFail($id);
-        $ciclo->update($requestData);
+        $persona = Persona::findOrFail($id);
+        $persona->update($requestData);
 
-        Session::flash('flash_message', 'Ciclos updated!');
+        Session::flash('flash_message', 'Persona updated!');
 
-        return redirect('admin/ciclos');
+        return redirect('personas');
     }
 
     /**
@@ -110,10 +110,10 @@ class CiclosController extends Controller
      */
     public function destroy($id)
     {
-        Ciclos::destroy($id);
+        Persona::destroy($id);
 
-        Session::flash('flash_message', 'Ciclos deleted!');
+        Session::flash('flash_message', 'Persona deleted!');
 
-        return redirect('admin/ciclos');
+        return redirect('personas');
     }
 }

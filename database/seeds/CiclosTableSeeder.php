@@ -10,10 +10,10 @@ class CiclosTableSeeder extends Seeder
     public function run()
     {
         DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        \DB::table('Ciclos')->delete();
+        DB::table('Ciclos')->delete();
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
         
-        \DB::table('Ciclos')->insert(array (
+        DB::table('Ciclos')->insert(array (
             0 =>
             array (
                 'id' => 1,

@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class CreateClasificacionCuentasTable extends Migration
+class CreateSectoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class CreateClasificacionCuentasTable extends Migration
      */
     public function up()
     {
-        Schema::create('clasificacion_cuentas', function (Blueprint $table) {
+        Schema::create('sectores', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ class CreateClasificacionCuentasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('clasificacion_cuentas');
+        Schema::drop('sectores');
     }
 }
