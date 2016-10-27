@@ -1,14 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Area {{ $area->id }}</div>
+                    <div class="panel-heading">area {{ $area->id }}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('areas/' . $area->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit Area"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                        <a href="{{ url('areas/' . $area->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit area"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                         {!! Form::open([
                             'method'=>'DELETE',
                             'url' => ['areas', $area->id],
@@ -17,7 +17,7 @@
                             {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"/>', array(
                                     'type' => 'submit',
                                     'class' => 'btn btn-danger btn-xs',
-                                    'title' => 'Delete Area',
+                                    'title' => 'Delete area',
                                     'onclick'=>'return confirm("Confirm delete?")'
                             ))!!}
                         {!! Form::close() !!}
