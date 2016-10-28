@@ -23,7 +23,26 @@
                             'files' => true
                         ]) !!}
 
-                        
+                                    <div class="form-group {{ $errors->has('descripcion') ? 'has-error' : ''}}">
+                {!! Form::label('descripcion', 'Descripcion', ['class' => 'col-md-4 control-label']) !!}
+                <div class="col-md-6">
+                    {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
+                    {!! $errors->first('descripcion', '<p class="help-block">:message</p>') !!}
+                </div>
+            </div>
+            <div class="form-group {{ $errors->has('activo') ? 'has-error' : ''}}">
+                {!! Form::label('activo', 'Activo', ['class' => 'col-md-4 control-label']) !!}
+                <div class="col-md-6">
+                                <div class="checkbox">
+                <label>{!! Form::radio('activo', '1') !!} Yes</label>
+            </div>
+            <div class="checkbox">
+                <label>{!! Form::radio('activo', '0', true) !!} No</label>
+            </div>
+                    {!! $errors->first('activo', '<p class="help-block">:message</p>') !!}
+                </div>
+            </div>
+
 
                         <div class="form-group">
                             <div class="col-md-offset-4 col-md-4">

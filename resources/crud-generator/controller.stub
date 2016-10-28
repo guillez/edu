@@ -23,6 +23,22 @@ class DummyClass extends Controller
         return view('{{viewPath}}{{viewName}}.index', compact('{{crudName}}'));
     }
 
+
+    public function anyData()
+    {
+        {{modelName}} = {{modelName}}::select(['id', 'descripcion']);
+
+        return Datatables::of({{modelName}})
+            ->addColumn('namelink', function ({{modelName}}) {
+                return '<a href="{{viewName}}/'.{{modelName}}->id.'" ">'.{{modelName}}->descripcion.'</a>';
+            })
+            ->addColumn('action', function ({{modelName}}) {
+                return '<a href="{{viewName}}/'.{{modelName}}->id.'/edit" class="btn btn-primary"> Editar</a>';
+            })
+            ->make(true);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

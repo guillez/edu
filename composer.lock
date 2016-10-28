@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "779991e425e75073f3f8d598fe3cb392",
-    "content-hash": "a777720bcb4479c16c339422fc33eb23",
+    "hash": "24975cc7b630a5a56f2de5f21452c6b0",
+    "content-hash": "a145abf1e8304494d13fa7f2ea90527a",
     "packages": [
         {
             "name": "appzcoder/crud-generator",
@@ -1027,6 +1027,44 @@
                 "php"
             ],
             "time": "2016-09-16 12:04:44"
+        },
+        {
+            "name": "nvd/crud-generator",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/engrnvd/laravel-crud-generator.git",
+                "reference": "7c6e961dae1ae10156e04ce80d54d3d5e755cebb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/engrnvd/laravel-crud-generator/zipball/7c6e961dae1ae10156e04ce80d54d3d5e755cebb",
+                "reference": "7c6e961dae1ae10156e04ce80d54d3d5e755cebb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nvd\\Crud\\": [
+                        "src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Naveed ul Hassan",
+                    "email": "08es34@gmail.com"
+                }
+            ],
+            "description": "CRUD generator for Laravel",
+            "time": "2016-02-03 06:27:10"
         },
         {
             "name": "paragonie/random_compat",

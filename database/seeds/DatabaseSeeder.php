@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call('PaisesTableSeeder');
         //$this->call('ProvinciasTableSeeder');
         $this->call('AlumnosTableSeeder');
-        $this->call('EstadosTableSeeder');
+        //$this->call('EstadosTableSeeder');
 
     }
 }

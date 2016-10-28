@@ -9,7 +9,8 @@
         "laravelcollective/html":"^5.2.0",
         "zizaco/entrust": "5.2.x-dev",
         "yajra/laravel-datatables-oracle": "~6.0",
-        "appzcoder/crud-generator": "^1.2"
+        "appzcoder/crud-generator": "^1.2",
+        "nvd/crud-generator": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

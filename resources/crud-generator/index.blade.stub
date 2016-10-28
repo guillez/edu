@@ -1,24 +1,10 @@
 @extends('layouts.dashboard')
+@section('page_heading','%%crudNameCap%%')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">%%crudNameCap%%</div>
-                    <div class="panel-body">
 
-                        <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-primary btn-xs" title="Add New %%modelName%%"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a>
-                        <br/>
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>%%formHeadingHtml%%<th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+    <table class="table table-hover " id="%%routeGroup%%%%viewName%%-table">
+        <thead>
                                 @foreach($%%crudName%% as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
@@ -41,14 +27,25 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                                </tbody>
-                            </table>
-                            <div class="pagination-wrapper"> {!! $%%crudName%%->render() !!} </div>
-                        </div>
+        </thead>
+    </table>
+@stop
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+@push('scripts')
+<script>
+$(function() {
+    $('#departamentos-table').DataTable({
+        processing: true,
+        serverSide: true,
+        language: {
+            "url": "//cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+        },
+        ajax: '{!! route('%%routeGroup%%%%viewName%%.data') !!}',
+        columns: [
+            { data: 'namelink', name: 'nombre' },
+            { data: 'action', name: 'action', orderable: false, searchable: false},            
+        ]
+    });
+});
+</script>
+@endpush

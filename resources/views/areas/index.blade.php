@@ -15,14 +15,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Acciones</th>
+                                        <th>ID</th><th> Descripcion </th><th> Activo </th><th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($areas as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        
+                                        <td>{{ $item->descripcion }}</td><td>{{ $item->activo }}</td>
                                         <td>
                                             <a href="{{ url('/areas/' . $item->id) }}" class="btn btn-success btn-xs" title="View area"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                                             <a href="{{ url('/areas/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Editar area"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>

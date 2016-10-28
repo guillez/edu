@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class estado extends Model
+class Estadosalumnos extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'estados';
+    protected $table = 'Estadosalumnos';
 
     /**
     * The database primary key value.
@@ -25,7 +25,7 @@ class estado extends Model
      *
      * @var array
      */
-    protected $fillable = [''];
+    protected $fillable = ['descripcion', 'activo'];
 
     
 }

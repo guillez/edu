@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\estado;
+use App\Estadosalumnos;
 use Illuminate\Http\Request;
 use Session;
 
-class estadosController extends Controller
+class EstadosalumnosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class estadosController extends Controller
      */
     public function index()
     {
-        $estados = estado::paginate(25);
+        $estadosalumnos = Estadosalumnos::paginate(25);
 
-        return view('estados.index', compact('estados'));
+        return view('estadosalumnos.index', compact('estadosalumnos'));
     }
 
     /**
@@ -30,7 +30,7 @@ class estadosController extends Controller
      */
     public function create()
     {
-        return view('estados.create');
+        return view('estadosalumnos.create');
     }
 
     /**
@@ -45,11 +45,11 @@ class estadosController extends Controller
         
         $requestData = $request->all();
         
-        estado::create($requestData);
+        Estadosalumnos::create($requestData);
 
-        Session::flash('flash_message', 'estado added!');
+        Session::flash('flash_message', 'Estadosalumnos added!');
 
-        return redirect('estados');
+        return redirect('estadosalumnos');
     }
 
     /**
@@ -61,9 +61,9 @@ class estadosController extends Controller
      */
     public function show($id)
     {
-        $estado = estado::findOrFail($id);
+        $estadosalumno = Estadosalumnos::findOrFail($id);
 
-        return view('estados.show', compact('estado'));
+        return view('estadosalumnos.show', compact('estadosalumno'));
     }
 
     /**
@@ -75,9 +75,9 @@ class estadosController extends Controller
      */
     public function edit($id)
     {
-        $estado = estado::findOrFail($id);
+        $estadosalumno = Estadosalumnos::findOrFail($id);
 
-        return view('estados.edit', compact('estado'));
+        return view('estadosalumnos.edit', compact('estadosalumno'));
     }
 
     /**
@@ -93,12 +93,12 @@ class estadosController extends Controller
         
         $requestData = $request->all();
         
-        $estado = estado::findOrFail($id);
-        $estado->update($requestData);
+        $estadosalumno = Estadosalumnos::findOrFail($id);
+        $estadosalumno->update($requestData);
 
-        Session::flash('flash_message', 'estado updated!');
+        Session::flash('flash_message', 'Estadosalumnos updated!');
 
-        return redirect('estados');
+        return redirect('estadosalumnos');
     }
 
     /**
@@ -110,10 +110,10 @@ class estadosController extends Controller
      */
     public function destroy($id)
     {
-        estado::destroy($id);
+        Estadosalumnos::destroy($id);
 
-        Session::flash('flash_message', 'estado deleted!');
+        Session::flash('flash_message', 'Estadosalumnos deleted!');
 
-        return redirect('estados');
+        return redirect('estadosalumnos');
     }
 }

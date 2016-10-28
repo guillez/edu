@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create New area</div>
+                    <div class="panel-heading">Create New estadosalumno</div>
                     <div class="panel-body">
 
                         @if ($errors->any())
@@ -16,7 +16,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/areas', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/estadosalumnos', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                                     <div class="form-group {{ $errors->has('descripcion') ? 'has-error' : ''}}">
                 {!! Form::label('descripcion', 'Descripcion', ['class' => 'col-md-4 control-label']) !!}

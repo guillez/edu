@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateAreasTable extends Migration
+class CreateEstadosalumnosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,10 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function(Blueprint $table) {
+        Schema::create('Estadosalumnos', function(Blueprint $table) {
             $table->increments('id');
+            $table->string('descripcion');
+            $table->boolean('activo');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ class CreateAreasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('areas');
+        Schema::drop('Estadosalumnos');
     }
 }

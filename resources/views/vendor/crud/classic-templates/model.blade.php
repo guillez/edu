@@ -1,22 +1,26 @@
 <?php
+/* @var $gen \Nvd\Crud\Commands\Crud */
+/* @var $fields [] */
+?>
+<?='<?php'?>
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Banco extends Model {
+class <?=$gen->modelClassName()?> extends Model {
 
     public $guarded = ["id","created_at","updated_at"];
 
     public static function findRequested()
     {
-        $query = Banco::query();
+        $query = <?=$gen->modelClassName()?>::query();
 
         // search results based on user input
-        \Request::input('id') and $query->where('id',\Request::input('id'));
-        \Request::input('nombre') and $query->where('nombre','like','%'.\Request::input('nombre').'%');
-        \Request::input('created_at') and $query->where('created_at',\Request::input('created_at'));
-        \Request::input('updated_at') and $query->where('updated_at',\Request::input('updated_at'));
-        
+        @foreach ( $fields as $field )
+\Request::input('{{$field->name}}') and $query->where({!! \Nvd\Crud\Db::getConditionStr($field) !!});
+        @endforeach
+
         // sort results
         \Request::input("sort") and $query->orderBy(\Request::input("sort"),\Request::input("sortType","asc"));
 
@@ -27,7 +31,11 @@ class Banco extends Model {
     public static function validationRules( $attributes = null )
     {
         $rules = [
-            'nombre' => 'required|string|max:255',
+@foreach ( $fields as $field )
+@if( $rule = \Nvd\Crud\Db::getValidationRule( $field ) )
+            {!! $rule !!}
+@endif
+@endforeach
         ];
 
         // no list is provided

@@ -48,7 +48,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('alumnos', 'AlumnosController');
     Route::resource('estados', 'EstadosController');
 
-
+    Route::resource('estadosalumnos', 'EstadosalumnosController');
 });
 
 Route::resource('estados', 'estadosController');
@@ -59,3 +59,8 @@ Route::resource('personas', 'PersonasController');
 Route::resource('personas', 'PersonasController');
 Route::resource('areas', 'AreasController');
 Route::resource('sectores', 'SectoresController');
+Route::resource('estados', 'EstadosController');
+
+	Route::get('estadosalumnos/data', 'EstadosalumnosController@anyData')->name('estadosalumnos.data');
+
+Route::resource('banco','BancoController');
